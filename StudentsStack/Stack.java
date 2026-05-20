@@ -29,5 +29,32 @@ public class Stack {
         System.out.println("the data of : '"+data.name+"' is pushed");
     }
 
-    public
+    public void pop (){
+        if (isEmpty()){
+            System.out.println("there is no data in stack");
+            return;
+        }
+        Student tmp = stack[top];
+        top--;
+        System.out.println("data of student '"+tmp.name+"' is removed");
+    }
+
+    public void peek(){
+        if (isEmpty()){
+            System.out.println("there is no data in stack");
+            return;
+        }else{
+            System.out.println("the top is : "+stack[top].name);
+        }
+    }
+
+    public void deleteStack(){
+        if (isEmpty()){
+            System.out.println("there is no data in stack");
+            return;
+        }else{
+            top =-1;
+            
+        }
+    }
 }
