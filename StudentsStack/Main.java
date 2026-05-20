@@ -20,7 +20,16 @@ public class Main {
             System.out.println("4. Delete all data");
             System.out.println("========================");
             System.out.println("Enter Choice : ");
+            choice = in.nextInt();
             
+            switch (choice) {
+                case value:
+                    
+                    break;
+            
+                default:
+                    break;
+            }
         }
     }
     
