@@ -1,4 +1,4 @@
-package javaprojects.StudentQueue;
+package javaprojects.LinearQueue;
 
 public class Students {
     String nim, name, className,major;
@@ -8,7 +8,7 @@ public class Students {
         this.name = name;
         this.className = className;
         this.major = major;
-        
+
     }
     
 }

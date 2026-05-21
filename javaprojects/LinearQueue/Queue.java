@@ -1,4 +1,4 @@
-package javaprojects.StudentQueue;
+package javaprojects.LinearQueue;
 
 public class Queue {
     Students [] queue;
