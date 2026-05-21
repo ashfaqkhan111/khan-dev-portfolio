@@ -15,14 +15,15 @@ public class Main {
 
         do{
             System.out.println("====MENU====");
-            System.out.println("1. Queue");
-            System.out.println("2. Dequeue");
+            System.out.println("1. EnQueue");
+            System.out.println("2. Show Rear");
             System.out.println("3. Show Front");
-            System.out.println("4. Show Rear");
+            System.out.println("4. DeQueue");
             System.out.println("5. exit");
             System.out.println("===============");
             System.out.print("Enter Choice : ");
             choice = in.nextInt();
+            in.nextLine();
 
             switch (choice){
                 case 1:
