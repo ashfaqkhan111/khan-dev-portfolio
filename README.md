@@ -1,3 +1,4 @@
 # khan-dev-portfolio
 
-hi am khan
+# hi i am khan
+Student of Information Engineering
