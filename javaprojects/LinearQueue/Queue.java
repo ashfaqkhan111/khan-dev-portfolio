@@ -8,7 +8,7 @@ public class Queue {
     Queue(int size){
         this.size = size;
         this.front = -1;
-        this.size = -1;
+        this.rear = -1;
         queue = new Students[size];
 
     }
@@ -50,7 +50,7 @@ public class Queue {
             front = -1;
             rear = -1;
         }
-        System.out.println("the value removed"+tmp.name);
+        System.out.println("the value removed : "+tmp.name);
     }
 
     public void showFront (){
@@ -58,7 +58,7 @@ public class Queue {
             System.out.println("the Queue is Empty");
             return;
         }
-        System.out.println("the front is : "+queue[front]);
+        System.out.println("the front is : "+queue[front].name);
 
     }
 
@@ -67,7 +67,7 @@ public class Queue {
             System.out.println("the Queue is Empty");
             return;
         }
-        System.out.println("the Rear is : "+queue[rear]);
+        System.out.println("the Rear is : "+queue[rear].name);
     }
     
 }
