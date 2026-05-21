@@ -1,5 +1,5 @@
 package javaprojects.StudentQueue;
 
-public class Main {
+public class Main { 
     
 }
