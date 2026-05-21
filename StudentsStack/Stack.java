@@ -4,7 +4,7 @@ public class Stack {
     Student [] stack;
 
     int top , size;
-
+ 
     Stack(int size){
         this.size = size;
         this.top = -1;
