@@ -18,6 +18,7 @@ public class Main {
             System.out.println("2. PoP data");
             System.out.println("3. Peek top");
             System.out.println("4. Delete all data");
+            System.out.println("5. Exit");
             System.out.println("========================");
             System.out.print("Enter Choice : ");
             choice = in.nextInt();
@@ -26,8 +27,8 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.print("Enter Student Number : ");
-                    int studentNumber = in.nextInt();
-                    in.nextLine();
+                    String studentNumber = in.nextLine();
+                    
                     System.out.print("Enter Name           : ");
                     String name = in.nextLine();
                     System.out.print("Enter Class          : ");
@@ -40,8 +41,23 @@ public class Main {
                     s.push(std);
                     break;
             
-                default:
+                case 2:
+                    s.pop();
                     break;
+
+                case 3:
+                    s.peek();
+                    break;
+
+                case 4:
+                    s.deleteStack();
+                    break;
+
+                case 5:
+                    System.out.println("thanks for using the program");
+                    break;
+                default :
+                break;
             }
         }while (choice != 6);
     }
