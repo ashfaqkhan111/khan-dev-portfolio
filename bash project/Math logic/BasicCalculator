@@ -1,0 +1,4 @@
+#!/bin/bash
+
+read -r exprission
+$exprission | bc
