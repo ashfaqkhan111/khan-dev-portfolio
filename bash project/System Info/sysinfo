@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "====SYSTEM INFORMATION===="
+echo "USER-NAME : $(whoami)"
+echo "HOST-NAME : $(hostname)"
+echo "UP-TIME   : $(uptime)"
+echo "DATE      : $(date '+%F')"
+echo "TIME      : $(date '+%T')"
+echo "  "
+echo "DISK      :"
+echo "  "
+df -h
+echo "  "
+echo "MEMORY    :"
+free -h
