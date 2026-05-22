@@ -6,10 +6,11 @@ echo "HOST-NAME : $(hostname)"
 echo "UP-TIME   : $(uptime)"
 echo "DATE      : $(date '+%F')"
 echo "TIME      : $(date '+%T')"
+echo "CPU cores : $(nproc)"
 echo "  "
 echo "DISK      :"
 echo "  "
 df -h
 echo "  "
 echo "MEMORY    :"
-free -h
+(free -h | awk '/^Mem/ {print $4}')
