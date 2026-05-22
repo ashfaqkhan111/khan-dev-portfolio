@@ -14,7 +14,7 @@ public class Queue {
     }
 
     boolean isEmpty (){
-        return front == -1;
+        return front == -1 && rear == -1;
     }
 
     boolean isFull (){
