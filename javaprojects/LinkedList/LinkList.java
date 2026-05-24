@@ -29,7 +29,7 @@ public class LinkList {
             currNode = currNode.next;
            }
 
-           currNode = newNode;
+           currNode.next = newNode;
         }
 
     }
@@ -56,6 +56,27 @@ public class LinkList {
             return;
         }else{
             head = head.next;
+        }
+    }
+
+    public void removeLast(){
+        if (isEmpty()){
+            System.out.println("the Linked List is empty !!");
+            return;
+        }
+        if (head.next == null){
+            head = null;
+            return;
+        }
+        else{
+
+            Node currNode = head;
+
+            while (currNode.next.next != null ){
+                currNode = currNode.next;
+            }
+
+            currNode.next = null;
         }
     }
     
