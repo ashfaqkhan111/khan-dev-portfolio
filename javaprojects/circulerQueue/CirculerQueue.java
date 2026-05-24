@@ -69,4 +69,12 @@ public class CirculerQueue {
         }
     }
     
+    public void eraseQueue(){
+        if (isEmpty()){
+            System.out.println("the Queue is already Empty");
+            return;
+        }else{
+            front = rear =-1;
+        }
+    }
 }
