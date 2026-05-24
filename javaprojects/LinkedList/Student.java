@@ -10,6 +10,8 @@ public class Student {
         this.major = major;
     }
 
-    
+    public void print(){
+        System.out.println(nim+" "+name+" "+className+" "+major);
+    }
     
 }
