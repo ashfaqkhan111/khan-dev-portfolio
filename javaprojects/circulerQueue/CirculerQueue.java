@@ -14,7 +14,7 @@ public class CirculerQueue {
         queue = new Students[size];
     }
 
-    boolean isEmpry (){
+    boolean isEmpty (){
         return front == -1;
     }
 
@@ -38,7 +38,7 @@ public class CirculerQueue {
     }
 
     public void dequeue (){
-        if (isEmpry()){
+        if (isEmpty()){
             System.out.println("the Queue is already empty");
             return;
         }
@@ -49,6 +49,24 @@ public class CirculerQueue {
             front = (front+1)%size;
         }
         System.out.println(temp.name+" is removed");
+    }
+
+    public void showRear (){
+        if (isEmpty()){
+            System.out.println("the Queue is empty");
+            return;
+        }else{
+            System.out.println("the rear is : "+queue[rear].name);
+        }
+    }
+
+    public void showFront(){
+        if (isEmpty()){
+            System.out.println("the Queue is empty");
+            return;
+        }else{
+            System.out.println("the front is : "+queue[front].name);
+        }
     }
     
 }
