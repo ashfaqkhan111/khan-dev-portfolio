@@ -16,12 +16,12 @@ public class Main {
             System.out.println("====MENU====");
             System.out.println("1. Enqueue");
             System.out.println("2. Dequeue");
-            System.out.println("3. Show Rear");
-            System.out.println("4. Show Front");
+            System.out.println("3. Show Front");
+            System.out.println("4. Show Rear");
             System.out.println("5. Erase Queue");
             System.out.println("6. program ended");
             System.out.println("=================");
-            System.out.println("Enter Choice : ");
+            System.out.print("Enter Choice : ");
             choice = in.nextInt();
             in.nextLine();
             
