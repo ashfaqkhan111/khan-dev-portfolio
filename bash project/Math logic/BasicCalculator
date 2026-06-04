@@ -1,4 +1,4 @@
 #!/bin/bash
-
+#sjd
 read -r exprission
 $exprission | bc
