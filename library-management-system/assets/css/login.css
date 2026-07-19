@@ -106,7 +106,7 @@ button{
     height:55px;
     border:none;
     border-radius:30px;
-    background: #356ae6;
+    background: #2563EB;
     color:white;
     font-size:18px;
     cursor:pointer;
@@ -114,7 +114,31 @@ button{
 
 }
 button:hover{
-    background:#2456cb;
+    background:#1D4ED8;
     transform:translateY(-2px);
     box-shadow:0 10px 20px rgba(53,106,230,.35);
+}
+.message{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    border-radius: 12px;
+    margin-bottom:20px;
+    font-size:14px;
+    font-weight:500px;
+
+}
+.warning{
+    background:#fff8e1;
+    color:#b7791f;
+    border:1px solid #f6d365;
+}
+.error{
+    background:#fdecec;
+    color:#c53030;
+    border:1px solid #feb2b2;
+}
+.message{
+    font-size:18px;
 }
