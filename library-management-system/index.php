@@ -60,7 +60,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </head> 
   
 <body>
-    
+   
 <header>
     <h1>Librarian Login</h1>
 
@@ -108,7 +108,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </div>
 </div>
 
-
+<script src="assets/js/login.js"></script> 
 </body>
 
 </html>
