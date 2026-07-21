@@ -171,3 +171,47 @@ color:#000;
 font-size:34px;
 font-weight:700;
 }
+.charts{
+    display:flex;
+    gap:30px;
+    margin:40px;
+}
+.bar-chart-card{
+    flex:1;
+    background:#ffff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+.bar-chart-card h2{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:28;
+    font-weight:600;
+}
+.pie-chart-card{
+    flex:1;
+    background:#ffff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    
+}
+.pie-chart-card h2{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:28;
+    font-weight:600;
+}
+
+.pie-chart-container{
+    width: 350px;
+    height:350px;
+    margin:20px auto;
+    position:relative;
+}
+.pie-chart-container canvas{
+    width:100% !important;
+    height: 100% !important;
+}
+

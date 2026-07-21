@@ -170,10 +170,34 @@ $totalReturned = mysqli_fetch_assoc($returnedQuery)['total'];
 
 </section>
 
+<section class="charts">
+    <div class="bar-chart-card">
+        <h2>Monthly Borrowings</h2>
 
+        <div class="bar-chart-container" >
+            <canvas id="borrowChart"></canvas>
+        </div>
+        
+
+    </div>
+
+    <div class="pie-chart-card">
+        <h2>Borrowings Categories</h2>
+
+        <div class="pie-chart-container">
+              <canvas id="categoryChart"></canvas>
+        </div>
+      
+
+    </div>
+
+</section>
 
     </main>
     </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="assets/js/dashboard.js"></script>
 
 </body>
 
