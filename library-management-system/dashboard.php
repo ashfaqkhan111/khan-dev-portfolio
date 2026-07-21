@@ -75,6 +75,11 @@ $totalReturned = mysqli_fetch_assoc($returnedQuery)['total'];
             </li>
 
             <li>
+                <i class="fa-solid fa-money-bill"></i>
+                <span>Fine Management</span>
+            </li>
+
+            <li>
                 <i class="fa-solid fa-chart-column"></i>
                 <span>Reports</span>
             </li>
@@ -164,6 +169,8 @@ $totalReturned = mysqli_fetch_assoc($returnedQuery)['total'];
     </div>
 
 </section>
+
+
 
     </main>
     </div>
