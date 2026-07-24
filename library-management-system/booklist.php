@@ -1,4 +1,7 @@
 <?php
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+
 session_start();
 
 require_once "database/db.php";
@@ -9,10 +12,37 @@ $conn = getConnection();
 //     header("Location: index.php");
 //     exit();
 
-// }
+// }E
 
-$categoryRsult = mysqli_query($conn, "
+$categoryResult = mysqli_query($conn, "
 SELECT category_id, category_name FROM categories ORDER BY category_name ASC");
+
+$bookResult = mysqli_query($conn, "
+SELECT
+books.book_id,
+books.isbn,
+books.title,
+authors.author_name,
+publisher.publisher_name,
+categories.category_name,
+books.publication_year,
+books.available_copies,
+books.book_status
+FROM books
+LEFT JOIN authors
+ON books.author_id = authors.author_id
+
+LEFT JOIN publisher
+ON books.publisher_id = publisher.publisher_id
+
+LEFT JOIN categories
+ON books.category_id = categories.category_id
+
+ORDER BY books.book_id DESC");
+
+if (!$bookResult) {
+    die(mysqli_error($conn));
+}
 
 ?>
 
@@ -133,7 +163,7 @@ SELECT category_id, category_name FROM categories ORDER BY category_name ASC");
 
                         <select name="category" class="category-filter" id="">
                             <option value="">All Categories</option>
-                            <?php while($category = mysqli_fetch_assoc($categoryRsult)){ ?>
+                            <?php while($category = mysqli_fetch_assoc($categoryResult)){ ?>
                             <option value="" <?php echo $category['category_id']; ?>></option>
 
                             <?php echo htmlspecialchars($category['category_name']); ?>
@@ -144,6 +174,94 @@ SELECT category_id, category_name FROM categories ORDER BY category_name ASC");
                     </div>
 
                 </section>
+
+                <section class="books-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ISBN</th>
+                                <th>Book</th>
+                                <th>Author</th>
+                                <th>Publisher</th>
+                                <th>Category</th>
+                                <th>Yeat</th>
+                                <th>Copies</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php while($book = mysqli_fetch_assoc($bookResult)){?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($book['isbn']); ?></td>
+                                <td><?php echo htmlspecialchars($book['title']); ?></td>
+                                <td><?php echo htmlspecialchars($book['author_name']); ?></td>
+                                <td><?php echo htmlspecialchars ($book['publisher_name']); ?></td>
+                                <td><?php echo htmlspecialchars ($book['category_name']); ?></td>
+                                <td><?php echo htmlspecialchars ($book['publication_year']); ?></td>
+                                <td><?php echo htmlspecialchars($book['available_copies']); ?></td>
+                                <td><?php ucfirst($book['book_status']); ?></td>
+                                <td>
+                                    <button class="edit-btn" data-id="<?php echo $book['book_id']; ?>">
+                                        <i class="fa-solid fa-pe-to-square"></i>
+
+                                    </button>
+
+                                    <button class="delete-btn" data-id="<?php echo $book['book_id']; ?>">
+                                        <i class="fa-solid fa-trash"></i>
+
+                                    </button>
+                                </td>
+                            </tr>
+                           <?php }?>
+                        </tbody>
+                    </table>
+
+                </section>
+
+                <div class="model" id="addBookModal">
+                    <div class="model-content">
+                        <div class="model-header">
+                            <h2>Add New Book</h2>
+                            <button class="close-btn" type="button">
+                                <i class="fa-solid fa-xmark"></i>
+
+                            </button>
+
+                            <form action="" method="POST">
+                                <div class="form-group">
+                                    <label for=""> ISBN</label>
+                                <input type="text" name="isbn" placeholder="Enter ISBN">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for=""> Book Title</label>
+                                    <input type="text" name="title" placeholder="Enter Book Title">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Author</label>
+                                    <input type="text" name="author-name" placeholder="Enter Author Name">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for=""></label>
+
+                                </div>
+                                
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
 
             </main>
 
