@@ -44,6 +44,40 @@ if (!$bookResult) {
     die(mysqli_error($conn));
 }
 
+if(isset($_POST['add_book'])){
+    $isbn = trim($_POST['isbn']);
+    $authorName = trim($_POST['author_name']);
+    $puslisherName = trim($_POST['publisher_name']);
+    $categoryName = trim($_POST['category_name']);
+    $publicationYear = trim($_POST['publication_year']);
+    $availableCopies = trim($_POST['available_copies']);
+
+    $sql = "SELECT auther_id FROM authors WHERE author_name = ?";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    mysqli_stmt_bind_param($stmt, "s", $authorName);
+
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    if(mysqli_num_rows($result) > 0){
+        $author = mysqli_fetch_assoc($result);
+        $authorID = $author['author_id'];
+
+    }else{
+        $sql = "INSERT INTO authors(author_name) VALUES(?)";
+
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $authorName);
+
+        mysqli_stmt_execute($stmt);
+        $authorID = mysqli_insert_id($conn);
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -220,7 +254,7 @@ if (!$bookResult) {
 
                 </section>
 
-                <div class="model" id="addBookModal">
+                <div class="model" id="addBookModel">
                     <div class="model-content">
                         <div class="model-header">
                             <h2>Add New Book</h2>
@@ -228,6 +262,7 @@ if (!$bookResult) {
                                 <i class="fa-solid fa-xmark"></i>
 
                             </button>
+                             </div>
 
                             <form action="" method="POST">
                                 <div class="form-group">
@@ -244,19 +279,39 @@ if (!$bookResult) {
 
                                 <div class="form-group">
                                     <label for="">Author</label>
-                                    <input type="text" name="author-name" placeholder="Enter Author Name">
+                                    <input type="text" name="author_name" placeholder="Enter Author Name">
 
                                 </div>
 
                                 <div class="form-group">
-                                    <label for=""></label>
+                                    <label for="">Publisher</label>
+                                    <input type="text" name="Publisher_name" placeholder="Enter Publisher Name">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Category</label>
+                                    <input type="text" name="category_name" placeholder="Enter Category Name">
+
+
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="">Publication Year</label>
+                                    <input type="number" name="publication_year" placeholder="2026">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Available Copies</label>
+                                    <input type="number" name="available_copies" placeholder="23">
 
                                 </div>
                                 
 
                             </form>
 
-                        </div>
+                       
 
                     </div>
 
