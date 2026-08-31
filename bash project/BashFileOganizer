@@ -18,4 +18,37 @@ mkdir -p "$DIR/Music"
 mkdir -p "$DIR/Archive"
 mkdir -p "$DIR/Others"
 
+for FILE in "$DIR"/*; do
 
+if [ -f "FILE" ]; then
+EXT="${FILE##*.}"
+
+case "$EXT" in
+
+pdf|doc|docx|txt|odt)
+mv "$FILE" "$DIR/Documents/"
+;;
+jpg|jpeg|png|gif|webp)
+mv "$FILE" "$DIR/Images/"
+;;
+mp4|mkv|avi|mov)
+mv "$FILE" "$DIR/Videos/"
+;;
+mp4|wav|flac)
+mv "$FILE" "$DIR/Music/"
+;;
+zip|tar|gz|rar|7z)
+mv "$FILE" "$DIR/Archives/"
+;;
+*)
+mv "$FILE" "$DIR/Others/"
+;;
+
+esac
+
+fi
+
+done
+
+echo ""
+echo "File oraganized successfully"
