@@ -239,8 +239,6 @@ I'm building a solid foundation step by step, rather than trying to learn everyt
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ashfaqkhanumarkhail@gmail.com)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6282313128282)
 
-**LinkedIn:** `[add your LinkedIn link here]`
-**Portfolio Website:** `[add your portfolio URL here]`
 
 </div>
 
