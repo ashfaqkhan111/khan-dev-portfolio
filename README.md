@@ -11,9 +11,9 @@ Building web and backend projects
 Interested in Digital Forensics & Cybersecurity
 Always learning and building something new
 
-#Tech Stack
+# Tech Stack
 
 JAVA HTML CSS SHELL PHP 
 
-#Tools & Technologies
+# Tools & Technologies
 LINUX, VS CODE, TERMINAL, DBEAVER-CE, VISUAL PARADIGM, NANO EDITOR, FIGMA, DB GATE 
