@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statment;
+import java.sql.Statement;
 
-public class ComoanyHandler {
+public class CompanyHandler implements HttpHandler {
 
 	@Override
 	public void handle (HttpExchange exchange) throws IOException {
@@ -20,7 +20,7 @@ public class ComoanyHandler {
 
 	Statement statement = connection.createStatement();
 
-	ResultSet result = statement.executeQuary("SELECT company_id, company_name, industry, email, FROM cimpany");
+	ResultSet result = statement.executeQuery("SELECT company_id, company_name, industry, email FROM company");
 
 	response += "[";
 	boolean first = true;
@@ -32,11 +32,11 @@ public class ComoanyHandler {
 			}
 
 		response += "{";
-		response += "\"company_id":" + result.getInt("company_id") + ",";
+		response += "\"company_id\":" + result.getInt("company_id") + ",";
 		response += "\"company_name\":\"" + result.getString("company_name")+"\",";
-		response += "\"industry\":""+ result.getString("industry")+"\",";
-		response += "\"email|":\""+ result.getString("email")+"\"";
-
+		response += "\"industry\":\""+ result.getString("industry")+"\",";
+		response += "\"email\":\""+ result.getString("email")+"\"";
+		response += "}";
 		first=false;
 
 		
@@ -50,13 +50,13 @@ public class ComoanyHandler {
 
 		}catch(Exception e){
 			response = "{\"error\":\"Database error\"}";
-			e.printStsckTrace();
+			e.printStackTrace();
 
 		}
 
-		exchange.getResponseHeaders(200, response.getBytes().length);
+		exchange.sendResponseHeaders(200, response.getBytes().length);
 
-		OutputStream output = exchange.ResponseBody();
+		OutputStream output = exchange.getResponseBody();
 		output.write(response.getBytes());
 		output.close();
 

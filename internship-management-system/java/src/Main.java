@@ -13,7 +13,7 @@ public class Main{
 	exchange.getResponseBody().write(response.getBytes());
 	exchange.getResponseBody().close(); });
 
-	server.createContext("\companies", new CompanyHandler());
+	server.createContext("/companies", new CompanyHandler());
 
 	server.start();
 	System.out.println("Server stsrt at http://localhost:8080");
