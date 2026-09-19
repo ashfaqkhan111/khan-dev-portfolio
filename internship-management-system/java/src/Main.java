@@ -14,7 +14,7 @@ public class Main{
 	exchange.getResponseBody().close(); });
 
 	server.createContext("/companies", new CompanyHandler());
-
+	server.createContext("/internships", new InternshipHandler());
 	server.start();
 	System.out.println("Server stsrt at http://localhost:8080");
 
